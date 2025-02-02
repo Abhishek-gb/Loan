@@ -58,12 +58,12 @@ const ContactUs = () => {
                   <p className="mb-3">
                     <strong>Website:</strong>{" "}
                     <a
-                      href="https://www.globalfincrop.net"
+                      href="https://rgfinancialservices.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-decoration-none text-primary"
                     >
-                      www.globalfincrop.net
+                      https://rgfinancialservices.vercel.app/
                     </a>
                   </p>
                 </div>
