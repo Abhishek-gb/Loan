@@ -12,7 +12,7 @@ const BankLogo = () => {
     <section className="mt-5">
       <Container>
         <div className="text-center mb-4">
-          <p>Join 4,000+ companies already growing</p>
+          <p>We collaborate with over 10 banks to provide loan services</p>
         </div>
         <Row className="logo-row">
           <Col md={2} sm={4} xs={6} className="text-center mb-3">
