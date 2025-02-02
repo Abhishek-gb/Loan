@@ -11,7 +11,7 @@ const WhatsAppForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, phone, message } = formData;
-    const whatsappNumber = "8310504098";
+    const whatsappNumber = "9148362211";
     const whatsappMessage = `Name: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
     window.open(`https://wa.me/91${whatsappNumber}?text=${whatsappMessage}`, "_blank");
   };

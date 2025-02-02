@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import loanData from './loanData'; 
-import './loan.css'
+import './loan.css';
 import WhatsAppForm from "./WhatsAppForm";
 import EMICalculator from "./EMICalculator";
 
@@ -17,6 +17,9 @@ const LoanServices = () => {
       const loan = loanData.find(loan => loan.type === loanType);
       setSelectedLoan(loan);
     }
+
+    // Scroll to top on navigation
+    window.scrollTo(0, 0);
   }, [location]);
 
   return (
@@ -24,7 +27,6 @@ const LoanServices = () => {
       <div className="loan-services-container">
         <h2 className="text-center mb-4">Loan Services</h2>
         
-        {/* Display selected loan details */}
         {selectedLoan ? (
           <div className="loan-details">
             <div className="loan-info">

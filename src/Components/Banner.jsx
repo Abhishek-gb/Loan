@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import office2 from "./Images/banner.jpg";
+import WhatsAppForm from './WhatsAppForm';
+import ContactUs from './ContactUs';
 
 const textVariants = {
   hidden: { y: -50, opacity: 0 },
@@ -8,7 +10,7 @@ const textVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 1, 
+      delay: 1,
       duration: 1,
       ease: 'easeOut',
     },
@@ -16,6 +18,9 @@ const textVariants = {
 };
 
 const Banner = () => {
+  const [showWhatsAppForm, setShowWhatsAppForm] = useState(false);
+  const [showContactUs, setShowContactUs] = useState(false);
+
   return (
     <div className="container-fluid" style={{ backgroundColor: '#002b49', color: 'white', padding: '3rem 0' }}>
       <div className="row align-items-center">
@@ -63,7 +68,7 @@ const Banner = () => {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            style={{ display: 'flex', gap: '10px', justifyContent: 'center', justifyContent: 'flex-start' }}
+            style={{ display: 'flex', gap: '10px', justifyContent: 'flex-start' }}
           >
             <button 
               className="btn btn-lg" 
@@ -74,16 +79,8 @@ const Banner = () => {
                 boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
                 transition: 'transform 0.2s, box-shadow 0.2s',
               }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '3px 3px 6px rgba(0, 0, 0, 0.4)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '2px 2px 5px rgba(0, 0, 0, 0.3)';
-              }}
-              
-               >
+              onClick={() => setShowWhatsAppForm(true)}
+            >
               ENQUIRE HERE
             </button>
 
@@ -96,18 +93,45 @@ const Banner = () => {
                 boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
                 transition: 'transform 0.2s, box-shadow 0.2s',
               }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '3px 3px 6px rgba(0, 0, 0, 0.4)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '2px 2px 5px rgba(0, 0, 0, 0.3)';
-              }}
+              onClick={() => setShowContactUs(true)}
             >
               CONTACT US
             </button>
           </motion.div>
+
+          {/* Modal for WhatsApp Form */}
+          {showWhatsAppForm && (
+            <div className="modal" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.6)' }}>
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title">Enquire Now</h5>
+                    <button type="button" className="btn-close" onClick={() => setShowWhatsAppForm(false)}></button>
+                  </div>
+                  <div className="modal-body">
+                    <WhatsAppForm onClose={() => setShowWhatsAppForm(false)} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Modal for Contact Us Form */}
+          {showContactUs && (
+            <div className="modal" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.6)' }}>
+              <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title">Contact Us</h5>
+                    <button type="button" className="btn-close" onClick={() => setShowContactUs(false)}></button>
+                  </div>
+                  <div className="modal-body">
+                    <ContactUs onClose={() => setShowContactUs(false)} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

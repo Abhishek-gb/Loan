@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 const WhatsAppButton = () => {
-  const phoneNumber = "918310504098"; // WhatsApp API requires numbers without '+'
+  const phoneNumber = "919148362211"; 
   const message = encodeURIComponent("Hello, I am interested in your service.");
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
 

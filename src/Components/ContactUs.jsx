@@ -1,5 +1,5 @@
 import React from "react";
-import back from "./Images/office2.jpg";
+import back from "./Images/phone.jpg";
 import WhatsAppForm from "./WhatsAppForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 

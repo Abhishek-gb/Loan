@@ -1,6 +1,6 @@
 import React from "react";
 import back from "./Images/about.jpg";
-import phone from "./Images/phone.jpg";
+import phone from "./Images/office2.jpg";
 import { BsBag } from "react-icons/bs";
 import { FaRegSmile } from "react-icons/fa";
 import { MdPersonAddAlt1 } from "react-icons/md";
@@ -48,7 +48,7 @@ const AboutUs = () => {
             className="position-absolute top-50 start-50 translate-middle text-black fw-bold"
             style={{ fontSize: "2rem", color: "#fff" }}
           >
-            Contact Us
+            About Us
           </p>
         </div>
       </div>
