@@ -5,6 +5,7 @@ import WhatsAppForm from "./WhatsAppForm";
 
 const Header = () => {
   const [showForm, setShowForm] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleEnquireClick = () => {
     setShowForm(true);
@@ -14,13 +15,25 @@ const Header = () => {
     setShowForm(false);
   };
 
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
+
+  const closeNavbar = () => {
+    const navbar = document.getElementById("navbarNav");
+    if (navbar.classList.contains("show")) {
+      navbar.classList.remove("show");
+    }
+    setDropdownOpen(false);
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light fixed-top shadow"
       style={{ backgroundColor: "#fff", zIndex: 1030 }}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/" onClick={closeNavbar}>
           <img src={logo} alt="Home Logo" height="60" width="150" />
         </Link>
         <button
@@ -40,18 +53,12 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
-                className="nav-link fw-bold text-dark"
-                to="/"
-              >
+              <Link className="nav-link fw-bold text-dark" to="/" onClick={closeNavbar}>
                 HOME
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link fw-bold text-dark"
-                to="/aboutus"
-              >
+              <Link className="nav-link fw-bold text-dark" to="/aboutus" onClick={closeNavbar}>
                 ABOUT US
               </Link>
             </li>
@@ -62,23 +69,22 @@ const Header = () => {
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                aria-expanded={dropdownOpen}
+                onClick={toggleDropdown}
               >
                 LOAN SERVICES
               </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                {[
-                  "Home Loan",
-                  "Personal Loan",
-                  "Business Loan",
-                  "Doctor's Loan",
-                  "Car Loan",
-                  "Loan Against Property",
-                ].map((loanType) => (
+              <ul
+                className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}
+                aria-labelledby="navbarDropdown"
+                style={{ position: "absolute", top: "100%", left: 0, zIndex: 1050 }}
+              >
+                {["Home Loan", "Personal Loan", "Business Loan", "Doctor's Loan", "Car Loan", "Loan Against Property"].map((loanType) => (
                   <li key={loanType}>
                     <Link
                       className="dropdown-item text-dark"
                       to={`/loanservices?loanType=${encodeURIComponent(loanType)}`}
+                      onClick={closeNavbar}
                     >
                       {loanType}
                     </Link>
@@ -87,17 +93,17 @@ const Header = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <Link
-                className="nav-link fw-bold text-dark"
-                to="/contact"
-              >
+              <Link className="nav-link fw-bold text-dark" to="/contact" onClick={closeNavbar}>
                 CONTACT US
               </Link>
             </li>
           </ul>
           <button
             className="btn btn-warning text-dark fw-bold ms-3"
-            onClick={handleEnquireClick}
+            onClick={() => {
+              handleEnquireClick();
+              closeNavbar();
+            }}
           >
             ENQUIRE NOW
           </button>
@@ -111,10 +117,7 @@ const Header = () => {
           role="dialog"
           style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
         >
-          <div
-            className="modal-dialog modal-dialog-centered modal-lg"
-            role="document"
-          >
+          <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div className="modal-content bg-white">
               <div className="modal-header">
                 <h5 className="modal-title text-dark">Enquiry Form</h5>
@@ -136,4 +139,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header;git 
