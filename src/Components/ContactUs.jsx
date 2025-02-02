@@ -15,8 +15,8 @@ const ContactUs = () => {
             style={{ maxHeight: "50vh", objectFit: "cover" }}
           />
           <p
-            className="position-absolute top-50 start-50 translate-middle text-black fw-bold"
-            style={{ fontSize: "2rem", color: "#fff" }}
+            className="position-absolute top-50 start-50 translate-middle fw-bold text-white"
+            style={{ fontSize: "2rem" }}
           >
             Contact Us
           </p>
@@ -31,14 +31,13 @@ const ContactUs = () => {
                 </h1>
                 <div className="card-body">
                   <p className="mb-3">
-                    <strong>Address:</strong>{" "}
+                    <strong>Address:</strong> 
                     <span className="text-muted">
-                      No.17, 1st Floor, 11th Cross, Peashanthnagar,
-                      Bengaluru-560079
+                      No.17, 1st Floor, 11th Cross, Prashanthnagar, Bengaluru-560079
                     </span>
                   </p>
                   <p className="mb-3">
-                    <strong>Phone:</strong>{" "}
+                    <strong>Phone:</strong> 
                     <a
                       href="tel:+919148362211"
                       className="text-decoration-none text-primary"
@@ -47,7 +46,7 @@ const ContactUs = () => {
                     </a>
                   </p>
                   <p className="mb-3">
-                    <strong>Email:</strong>{" "}
+                    <strong>Email:</strong> 
                     <a
                       href="mailto:rgfinancialservices101@gmail.com"
                       className="text-decoration-none text-primary"
@@ -56,14 +55,14 @@ const ContactUs = () => {
                     </a>
                   </p>
                   <p className="mb-3">
-                    <strong>Website:</strong>{" "}
+                    <strong>Website:</strong> 
                     <a
                       href="https://rgfinancialservices.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-decoration-none text-primary"
                     >
-                      https://rgfinancialservices.vercel.app/
+                      rgfinancialservices.vercel.app
                     </a>
                   </p>
                 </div>
@@ -79,13 +78,14 @@ const ContactUs = () => {
 
       <div className="container-fluid p-0" style={{ height: "100vh" }}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d242.99563545275808!2d77.5329596459472!3d12.976318276664266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU4JzM1LjAiTiA3N8KwMzEnNTguOSJF!5e0!3m2!1sen!2sin!4v1738478416553!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d242.99563545275808!2d77.5329596459472!3d12.976318276664266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1i1!2i2!4v1738478416553!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
-          allowFullScreen=""
+          allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="Google Maps Location"
         ></iframe>
       </div>
     </>
