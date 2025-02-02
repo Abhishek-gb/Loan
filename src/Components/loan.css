@@ -1,0 +1,39 @@
+.loan-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loan-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.loan-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.loan-info h3 {
+  margin-bottom: 10px;
+}
+
+.loan-info ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.loan-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.loan-image img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 8px;
+}

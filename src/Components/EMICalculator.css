@@ -1,0 +1,52 @@
+/* Card styling with 3D effect */
+.emi-card {
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+}
+
+/* Input fields with 3D effect */
+.input-3d {
+  border: none;
+  border-radius: 10px;
+  background: #f0f0f0;
+  box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.input-3d:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #d9d9d9, inset -2px -2px 5px #ffffff;
+}
+
+/* Buttons with 3D effect */
+.btn-3d {
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #007bff, #0069d9);
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  color: white;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 15px #bebebe, -8px -8px 15px #ffffff;
+}
+
+.btn-3d:active {
+  transform: translateY(0);
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+}
+
+/* Result box styling */
+.result-box {
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #d4edda, #c3e6cb);
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  padding: 20px;
+}
